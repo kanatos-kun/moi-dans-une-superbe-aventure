@@ -1,0 +1,78 @@
+{
+  "section1": {"files": [
+    {
+      "type": "animation",
+      "key": "animations",
+      "url": "assets/animations.json"
+    },
+    {
+      "type": "sceneFile",
+      "key": "Scene1",
+      "url": "assets/scenes/Scene1.js"
+    },
+    {
+      "type": "multiatlas",
+      "key": "textures",
+      "url": "assets/atlas/textures.json",
+      "path": "assets/atlas"
+    },
+    {
+      "type": "image",
+      "key": "bulle de texte",
+      "url": "assets/img/bulle de texte.png",
+      "normalMap": ""
+    },
+    {
+      "type": "multiatlas",
+      "key": "atlas",
+      "url": "assets/atlas/atlas.json",
+      "path": "assets/atlas"
+    },
+    {
+      "type": "image",
+      "key": "tileset",
+      "url": "assets/tileset/tileset.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "map 1",
+      "url": "assets/img/map 1.png",
+      "normalMap": ""
+    },
+    {
+      "type": "multiatlas",
+      "key": "hud",
+      "url": "assets/atlas/hud.json",
+      "path": "assets/atlas"
+    },
+    {
+      "type": "sceneFile",
+      "key": "hud",
+      "url": "assets/scenes/hud/hud.js"
+    },
+    {
+      "type": "bitmapFont",
+      "key": "KidsZone",
+      "textureURL": "assets/font/KidsZone.png",
+      "fontDataURL": "assets/font/KidsZone.xml"
+    },
+    {
+      "type": "audio",
+      "key": "simple_click",
+      "url": ["assets/sons/effect/retro_ui_menu_simple_click_12.wav"]
+    },
+    {
+      "type": "tilemapTiledJSON",
+      "key": "map 1",
+      "url": "assets/map/map 1.json"
+    }
+  ]},
+  "meta": {
+    "generated": "1568706271676",
+    "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.3",
+    "contentType": "Phaser v3 Asset Pack",
+    "url": "https://phasereditor2d.com",
+    "version": "2"
+  }
+}

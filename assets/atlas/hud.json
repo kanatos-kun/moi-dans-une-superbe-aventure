@@ -1,0 +1,209 @@
+{
+	"textures": [
+		{
+			"image": "hud.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 782,
+				"h": 687
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "minus.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 80,
+						"h": 14
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 80,
+						"h": 14
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 80,
+						"h": 14
+					}
+				},
+				{
+					"filename": "volume_mute.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 18,
+						"h": 18
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 18,
+						"h": 18
+					},
+					"frame": {
+						"x": 83,
+						"y": 1,
+						"w": 18,
+						"h": 18
+					}
+				},
+				{
+					"filename": "bouton X.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 42,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 42,
+						"h": 43
+					},
+					"frame": {
+						"x": 103,
+						"y": 1,
+						"w": 42,
+						"h": 43
+					}
+				},
+				{
+					"filename": "bouton.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 123,
+						"h": 57
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 123,
+						"h": 57
+					},
+					"frame": {
+						"x": 147,
+						"y": 1,
+						"w": 123,
+						"h": 57
+					}
+				},
+				{
+					"filename": "hud_life .png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 133,
+						"h": 57
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 133,
+						"h": 57
+					},
+					"frame": {
+						"x": 272,
+						"y": 1,
+						"w": 133,
+						"h": 57
+					}
+				},
+				{
+					"filename": "hud_potion.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 59,
+						"h": 57
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 59,
+						"h": 57
+					},
+					"frame": {
+						"x": 407,
+						"y": 1,
+						"w": 59,
+						"h": 57
+					}
+				},
+				{
+					"filename": "add.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 79,
+						"h": 73
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 79,
+						"h": 73
+					},
+					"frame": {
+						"x": 468,
+						"y": 1,
+						"w": 79,
+						"h": 73
+					}
+				},
+				{
+					"filename": "volume_add.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 37,
+						"h": 113
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 37,
+						"h": 113
+					},
+					"frame": {
+						"x": 549,
+						"y": 1,
+						"w": 37,
+						"h": 113
+					}
+				},
+				{
+					"filename": "ecran menu.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 780,
+						"h": 570
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 780,
+						"h": 570
+					},
+					"frame": {
+						"x": 1,
+						"y": 116,
+						"w": 780,
+						"h": 570
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:a3cf5d0697c857702ef1d7ddd39a6b19:653df73ac56c94402e25342416bce57b:1f12e3a3d447c2b9be1f7d9b1846589c$"
+	}
+}

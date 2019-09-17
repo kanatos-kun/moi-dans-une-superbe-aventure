@@ -1,0 +1,378 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.3",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "c1663b26-d404-415a-8240-cd9d3b5ae6ac",
+    "-type": "DisplayList",
+    "children": [
+      {
+        "-id": "4d6c71ea-6473-42b0-9041-83ceba174891",
+        "-type": "Image",
+        "children": [],
+        "variableName": "menuBouton",
+        "variableField": true,
+        "x": 87.3985824584961,
+        "y": 38,
+        "textureKey": "hud",
+        "textureFrame": "bouton.png"
+      },
+      {
+        "-id": "0194f74a-80e1-4d6a-95c7-cba91d1c55af",
+        "-type": "Text",
+        "children": [],
+        "variableName": "text",
+        "variableField": false,
+        "x": 37.09164810180664,
+        "y": 21.723482131958008,
+        "text": "MENU\r\n\r\n",
+        "align": "center",
+        "fontFamily": "MySonIsTebe",
+        "fontSize": "25px",
+        "color": "#000000",
+        "fixedWidth": 100,
+        "fixedHeight": 50
+      },
+      {
+        "-id": "00bfae4f-45a2-42bd-a411-4b22b8a72fd7",
+        "-type": "Image",
+        "children": [],
+        "variableName": "hud_life .png",
+        "variableField": false,
+        "x": 245.6719970703125,
+        "y": 38,
+        "textureKey": "hud",
+        "textureFrame": "hud_life .png"
+      },
+      {
+        "-id": "b4d74338-bd12-4013-b74b-df4ee93065b2",
+        "-type": "Image",
+        "children": [],
+        "variableName": "hud_potion.png",
+        "variableField": false,
+        "x": 450.734130859375,
+        "y": 38,
+        "textureKey": "hud",
+        "textureFrame": "hud_potion.png"
+      },
+      {
+        "-id": "088a4f0d-a342-4996-af01-768143db614d",
+        "-type": "Image",
+        "children": [],
+        "variableName": "ecran menu.png",
+        "variableField": false,
+        "visible": false,
+        "x": 1265.4705810546875,
+        "y": 415.3102722167969,
+        "textureKey": "hud",
+        "textureFrame": "ecran menu.png"
+      },
+      {
+        "-id": "6be8af38-3479-4ba8-83f0-dc8fb94a6652",
+        "-type": "Image",
+        "children": [],
+        "variableName": "bouton X.png",
+        "variableField": false,
+        "data": {
+          "tag": "\"button\"",
+          "name": "\"close\""
+        },
+        "visible": false,
+        "x": 1653.623046875,
+        "y": 135.53567504882812,
+        "textureKey": "hud",
+        "textureFrame": "bouton X.png"
+      },
+      {
+        "-id": "c3d0e295-43c9-4727-8a17-ede4ef5104d4",
+        "-type": "Image",
+        "children": [],
+        "variableName": "bouton.png_1",
+        "variableField": false,
+        "data": {
+          "tag": "\"button\"",
+          "name": "\"map\""
+        },
+        "visible": false,
+        "x": 989.015380859375,
+        "y": 736.4550170898438,
+        "textureKey": "hud",
+        "textureFrame": "bouton.png"
+      },
+      {
+        "-id": "5e500575-5771-4f1b-8912-2756da7011ff",
+        "-type": "Image",
+        "children": [],
+        "variableName": "bouton.png_2",
+        "variableField": false,
+        "data": {
+          "tag": "\"button\"",
+          "name": "\"inventaire\""
+        },
+        "visible": false,
+        "x": 1125.9503173828125,
+        "y": 737.6775512695312,
+        "textureKey": "hud",
+        "textureFrame": "bouton.png"
+      },
+      {
+        "-id": "b365f325-c093-43a7-927f-019b184d8c85",
+        "-type": "Image",
+        "children": [],
+        "variableName": "bouton.png_3",
+        "variableField": false,
+        "data": {
+          "tag": "\"button\"",
+          "name": "\"equip\""
+        },
+        "visible": false,
+        "x": 1261.66259765625,
+        "y": 738.9002075195312,
+        "textureKey": "hud",
+        "textureFrame": "bouton.png"
+      },
+      {
+        "-id": "5d3a5f6f-b3cd-4bfe-bc9e-40b58e3d728f",
+        "-type": "Image",
+        "children": [],
+        "variableName": "bouton.png_4",
+        "variableField": false,
+        "data": {
+          "tag": "\"button\"",
+          "name": "\"statut\""
+        },
+        "visible": false,
+        "x": 1399.820068359375,
+        "y": 738.9002075195312,
+        "textureKey": "hud",
+        "textureFrame": "bouton.png"
+      },
+      {
+        "-id": "58e3d898-a815-4383-b5c6-e079dcce135d",
+        "-type": "Image",
+        "children": [],
+        "variableName": "bouton.png_5",
+        "variableField": false,
+        "data": {
+          "tag": "\"button\"",
+          "name": "\"parametre\""
+        },
+        "visible": false,
+        "x": 1536.7550048828125,
+        "y": 740.1228637695312,
+        "textureKey": "hud",
+        "textureFrame": "bouton.png"
+      },
+      {
+        "-id": "7822b980-8342-493a-9bba-37f2726cac65",
+        "-type": "Text",
+        "children": [],
+        "variableName": "text_2",
+        "variableField": false,
+        "visible": false,
+        "x": 937.8502807617188,
+        "y": 720.6315307617188,
+        "text": "MAP\r\n\r\n",
+        "align": "center",
+        "fontFamily": "MySonIsTebe",
+        "fontSize": "25px",
+        "color": "#000000",
+        "fixedWidth": 100,
+        "fixedHeight": 50
+      },
+      {
+        "-id": "eed0005f-73f1-43b5-a776-c38a67f55f75",
+        "-type": "Text",
+        "children": [],
+        "variableName": "text_3",
+        "variableField": false,
+        "visible": false,
+        "x": 1075.208740234375,
+        "y": 726.6010131835938,
+        "text": "INVENTAIRE\r\n\r\n\r\n",
+        "align": "center",
+        "fontFamily": "MySonIsTebe",
+        "fontSize": "18px",
+        "color": "#000000",
+        "fixedWidth": 100,
+        "fixedHeight": 50
+      },
+      {
+        "-id": "1fd16e62-8c96-4e8d-94f4-b32526e75abd",
+        "-type": "Text",
+        "children": [],
+        "variableName": "text_4",
+        "variableField": false,
+        "visible": false,
+        "x": 1215.365966796875,
+        "y": 721.6881103515625,
+        "text": "EQUIP\r\n\r\n\r\n",
+        "align": "center",
+        "fontFamily": "MySonIsTebe",
+        "fontSize": "25px",
+        "color": "#000000",
+        "fixedWidth": 100,
+        "fixedHeight": 50
+      },
+      {
+        "-id": "36615626-c1c6-4b23-9c29-7a324e72ad0f",
+        "-type": "Text",
+        "children": [],
+        "variableName": "text_5",
+        "variableField": false,
+        "visible": false,
+        "x": 1353.067138671875,
+        "y": 720.6426391601562,
+        "text": "STATUT\r\n",
+        "align": "center",
+        "fontFamily": "MySonIsTebe",
+        "fontSize": "25px",
+        "color": "#000000",
+        "fixedWidth": 100,
+        "fixedHeight": 50
+      },
+      {
+        "-id": "acd3827f-49c7-410f-ae21-7bda4e593fac",
+        "-type": "Text",
+        "children": [],
+        "variableName": "text_6",
+        "variableField": false,
+        "visible": false,
+        "x": 1464.55517578125,
+        "y": 727.8471069335938,
+        "text": "PARAMETRE\r\n\r\n",
+        "align": "center",
+        "fontFamily": "MySonIsTebe",
+        "fontSize": "18px",
+        "color": "#000000",
+        "fixedWidth": 150,
+        "fixedHeight": 50
+      },
+      {
+        "-id": "7cfdeb19-dd61-4ac6-83fa-57e1f628f6a5",
+        "-type": "Text",
+        "children": [],
+        "variableName": "inventaire_window",
+        "variableField": false,
+        "visible": false,
+        "x": 2397.960693359375,
+        "y": 418.6531066894531,
+        "text": "INVENTAIRE\r\n\r\n",
+        "fontSize": "100px",
+        "color": "#000000"
+      },
+      {
+        "-id": "3e6e648b-f1d3-4a3f-8e97-3990ccb6fa5e",
+        "-type": "Text",
+        "children": [],
+        "variableName": "map_window",
+        "variableField": false,
+        "visible": false,
+        "x": 1978.8858642578125,
+        "y": 407.5093994140625,
+        "text": "MAP\r\n",
+        "fontSize": "100px",
+        "color": "#000000"
+      },
+      {
+        "-id": "caef33f2-758d-426c-81f3-7f5d961126f9",
+        "-type": "Text",
+        "children": [],
+        "variableName": "equip_window",
+        "variableField": false,
+        "visible": false,
+        "x": 3256.660400390625,
+        "y": 413.7914733886719,
+        "text": "EQUIP\r\n\r\n",
+        "fontSize": "100px",
+        "color": "#000000"
+      },
+      {
+        "-id": "de93ac2c-4930-4779-b04c-b4eaec9e149b",
+        "-type": "Text",
+        "children": [],
+        "variableName": "statut_window",
+        "variableField": false,
+        "visible": false,
+        "x": 3959.827880859375,
+        "y": 412.0548095703125,
+        "text": "STATUT\r\n\r\n",
+        "fontSize": "100px",
+        "color": "#000000"
+      },
+      {
+        "-id": "52fe776f-120c-41eb-8b6b-6875e48c2adf",
+        "-type": "Text",
+        "children": [],
+        "variableName": "parametre_window",
+        "variableField": false,
+        "visible": false,
+        "x": 4646.6337890625,
+        "y": 407.8189392089844,
+        "text": "PARAMETRE\r\n\r\n\r\n",
+        "fontSize": "100px",
+        "color": "#000000"
+      }
+    ]
+  },
+  "groups": {
+    "-id": "b9a3db2b-552f-4702-bef1-5eb1312a8557",
+    "-type": "Groups",
+    "children": [
+      {
+        "-id": "da574857-02a2-4423-af50-dc8798085a1c",
+        "children": [
+          {"-id": "088a4f0d-a342-4996-af01-768143db614d"},
+          {"-id": "6be8af38-3479-4ba8-83f0-dc8fb94a6652"},
+          {"-id": "c3d0e295-43c9-4727-8a17-ede4ef5104d4"},
+          {"-id": "5e500575-5771-4f1b-8912-2756da7011ff"},
+          {"-id": "b365f325-c093-43a7-927f-019b184d8c85"},
+          {"-id": "5d3a5f6f-b3cd-4bfe-bc9e-40b58e3d728f"},
+          {"-id": "58e3d898-a815-4383-b5c6-e079dcce135d"},
+          {"-id": "7822b980-8342-493a-9bba-37f2726cac65"},
+          {"-id": "eed0005f-73f1-43b5-a776-c38a67f55f75"},
+          {"-id": "1fd16e62-8c96-4e8d-94f4-b32526e75abd"},
+          {"-id": "36615626-c1c6-4b23-9c29-7a324e72ad0f"},
+          {"-id": "acd3827f-49c7-410f-ae21-7bda4e593fac"}
+        ],
+        "variableName": "menu",
+        "variableField": true
+      },
+      {
+        "-id": "7a02e025-4228-46f6-850a-98897e005e08",
+        "children": [{"-id": "3e6e648b-f1d3-4a3f-8e97-3990ccb6fa5e"}],
+        "variableName": "map_window",
+        "variableField": true
+      },
+      {
+        "-id": "09f68969-cffc-4604-865f-4c21056fa555",
+        "children": [{"-id": "7cfdeb19-dd61-4ac6-83fa-57e1f628f6a5"}],
+        "variableName": "inventaire_window",
+        "variableField": true
+      },
+      {
+        "-id": "e2f52948-b80d-4f7e-8f30-3a9baafebe35",
+        "children": [{"-id": "caef33f2-758d-426c-81f3-7f5d961126f9"}],
+        "variableName": "equip_window",
+        "variableField": true
+      },
+      {
+        "-id": "14809b37-9c21-4f4c-8718-f34e0f0447d9",
+        "children": [{"-id": "de93ac2c-4930-4779-b04c-b4eaec9e149b"}],
+        "variableName": "statut_window",
+        "variableField": true
+      },
+      {
+        "-id": "e8e68411-0a1f-4249-808f-a344938d6349",
+        "children": [{"-id": "52fe776f-120c-41eb-8b6b-6875e48c2adf"}],
+        "variableName": "parametre_window",
+        "variableField": true
+      }
+    ]
+  },
+  "borderWidth": 832,
+  "borderHeight": 832,
+  "createMethodName": "_create",
+  "methodContextType": "SCENE",
+  "sceneKey": "hud"
+}
