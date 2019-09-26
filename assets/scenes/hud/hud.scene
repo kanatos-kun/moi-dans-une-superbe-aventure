@@ -12,8 +12,8 @@
         "children": [],
         "variableName": "menuBouton",
         "variableField": true,
-        "x": 87.3985824584961,
-        "y": 38,
+        "x": 85.11383056640625,
+        "y": 30.01980209350586,
         "textureKey": "hud",
         "textureFrame": "bouton.png"
       },
@@ -23,8 +23,8 @@
         "children": [],
         "variableName": "text",
         "variableField": false,
-        "x": 37.09164810180664,
-        "y": 21.723482131958008,
+        "x": 34.8068962097168,
+        "y": 13.743284225463867,
         "text": "MENU\r\n\r\n",
         "align": "center",
         "fontFamily": "MySonIsTebe",
@@ -32,28 +32,6 @@
         "color": "#000000",
         "fixedWidth": 100,
         "fixedHeight": 50
-      },
-      {
-        "-id": "00bfae4f-45a2-42bd-a411-4b22b8a72fd7",
-        "-type": "Image",
-        "children": [],
-        "variableName": "hud_life .png",
-        "variableField": false,
-        "x": 245.6719970703125,
-        "y": 38,
-        "textureKey": "hud",
-        "textureFrame": "hud_life .png"
-      },
-      {
-        "-id": "b4d74338-bd12-4013-b74b-df4ee93065b2",
-        "-type": "Image",
-        "children": [],
-        "variableName": "hud_potion.png",
-        "variableField": false,
-        "x": 450.734130859375,
-        "y": 38,
-        "textureKey": "hud",
-        "textureFrame": "hud_potion.png"
       },
       {
         "-id": "088a4f0d-a342-4996-af01-768143db614d",
@@ -262,19 +240,6 @@
         "color": "#000000"
       },
       {
-        "-id": "3e6e648b-f1d3-4a3f-8e97-3990ccb6fa5e",
-        "-type": "Text",
-        "children": [],
-        "variableName": "map_window",
-        "variableField": false,
-        "visible": false,
-        "x": 1978.8858642578125,
-        "y": 407.5093994140625,
-        "text": "MAP\r\n",
-        "fontSize": "100px",
-        "color": "#000000"
-      },
-      {
         "-id": "caef33f2-758d-426c-81f3-7f5d961126f9",
         "-type": "Text",
         "children": [],
@@ -312,6 +277,17 @@
         "text": "PARAMETRE\r\n\r\n\r\n",
         "fontSize": "100px",
         "color": "#000000"
+      },
+      {
+        "-id": "6dce8668-20c8-446f-a76c-157cdea0ef05",
+        "-type": "Image",
+        "children": [],
+        "variableName": "piece.png",
+        "variableField": false,
+        "x": 260.6888122558594,
+        "y": 24.772056579589844,
+        "textureKey": "hud",
+        "textureFrame": "piece.png"
       }
     ]
   },
@@ -340,7 +316,7 @@
       },
       {
         "-id": "7a02e025-4228-46f6-850a-98897e005e08",
-        "children": [{"-id": "3e6e648b-f1d3-4a3f-8e97-3990ccb6fa5e"}],
+        "children": [],
         "variableName": "map_window",
         "variableField": true
       },

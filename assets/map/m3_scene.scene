@@ -1,0 +1,20 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.3",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "1b94fac4-82f8-42bf-9aa2-b75a469b81d5",
+    "-type": "DisplayList",
+    "children": []
+  },
+  "groups": {
+    "-id": "b6ae0a40-ea37-431d-9753-24a60b6b29bd",
+    "-type": "Groups",
+    "children": []
+  },
+  "borderHeight": 450,
+  "superClassName": "MapExtends",
+  "createMethodName": "_create",
+  "methodContextType": "SCENE",
+  "sceneKey": "m3_scene"
+}

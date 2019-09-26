@@ -13,9 +13,9 @@ class hud extends Phaser.Scene {
 	
 	_create() {
 	
-		var menuBouton = this.add.image(87.39858, 38.0, "hud", "bouton.png");
+		var menuBouton = this.add.image(85.11383, 30.019802, "hud", "bouton.png");
 		
-		this.add.text(37.09165, 21.723482, "MENU\r\n\r\n", {
+		this.add.text(34.806896, 13.743284, "MENU\r\n\r\n", {
     "align": "center",
     "fontFamily": "MySonIsTebe",
     "fontSize": "25px",
@@ -23,10 +23,6 @@ class hud extends Phaser.Scene {
     "fixedWidth": 100,
     "fixedHeight": 50
 });
-		
-		this.add.image(245.672, 38.0, "hud", "hud_life .png");
-		
-		this.add.image(450.73413, 38.0, "hud", "hud_potion.png");
 		
 		var ecran_menu_png = this.add.image(1265.4706, 415.31027, "hud", "ecran menu.png");
 		ecran_menu_png.visible = false;
@@ -117,12 +113,6 @@ class hud extends Phaser.Scene {
 });
 		inventaire_window.visible = false;
 		
-		var map_window = this.add.text(1978.8859, 407.5094, "MAP\r\n", {
-    "fontSize": "100px",
-    "color": "#000000"
-});
-		map_window.visible = false;
-		
 		var equip_window = this.add.text(3256.6604, 413.79147, "EQUIP\r\n\r\n", {
     "fontSize": "100px",
     "color": "#000000"
@@ -141,8 +131,10 @@ class hud extends Phaser.Scene {
 });
 		parametre_window.visible = false;
 		
+		this.add.image(260.6888, 24.772057, "hud", "piece.png");
+		
 		this.fMenu = this.add.group([ ecran_menu_png, bouton_X_png, bouton_png_1, bouton_png_2, bouton_png_3, bouton_png_4, bouton_png_5, text_2, text_3, text_4, text_5, text_6 ]);
-		this.fMap_window = this.add.group([ map_window ]);
+		this.fMap_window = this.add.group([  ]);
 		this.fInventaire_window = this.add.group([ inventaire_window ]);
 		this.fEquip_window = this.add.group([ equip_window ]);
 		this.fStatut_window = this.add.group([ statut_window ]);
@@ -161,6 +153,8 @@ class hud extends Phaser.Scene {
 	
 	/* START-USER-CODE */
 	create(){
+		this.add.rectangle(0,0,832,70,0xffffff).setOrigin(0);
+		
 		this._create();
 		this.click = this.sound.add("simple_click");
 		
@@ -172,10 +166,13 @@ class hud extends Phaser.Scene {
 		grid.setVisible(false);
 		grid.setOrigin(0);
 		this.fMap_window.add(grid);
-		var cellule_map = this.add.rectangle(2058,415,32,32,0xff0000);
+		this.generateCellMinimap();
+		
+		/*var cellule_map = this.add.rectangle(2058,415,32,32,0xff0000);
 		cellule_map.setStrokeStyle(3,0x000000);
-		cellule_map.setVisible(false);
-		this.fMap_window.add(cellule_map);
+		cellule_map.setVisible(false); */
+		
+		//this.fMap_window.add(cellule_map);
 		this.fMenu.getChildren()[1].setDepth(2);
 		
 		
@@ -188,8 +185,14 @@ class hud extends Phaser.Scene {
 			inventaire_window:{x: 2200,y: 0},equip_window:{x: 3100,y: 0},
 			statut_window:{x: 3800,y: 0},    parametre_window:{x: 4500,y: 0}
 		}
-		let heroLife = this.scene.get("Scene1").fHero.getData("life");
-		this.add.bitmapText(230,25,"KidsZone",heroLife +"/3",24);
+		
+		
+		/*
+		let heroLife = this.game.global.hero.life;//this.scene.get("m1_scene").fHero.getData("life");
+		let heroMaxLife = this.game.global.hero.maxLife;
+		this.add.bitmapText(230,16,"KidsZone",heroLife +" / " + heroMaxLife,24); */
+		let coinPoints = this.game.global.coin;
+		this.infoTextCoin = this.add.bitmapText(300,12,"KidsZone","x " + coinPoints,24);
 		this.fMenuBouton.setInteractive();
 		
 		
@@ -277,15 +280,15 @@ class hud extends Phaser.Scene {
 				//cacher le menu
 				Phaser.Actions.IncX(this.fMenu.getChildren(), this.hiddenPositionMenu.menu.x);
 				this.changeWindowForm("clean");	
-				this.scene.get("Scene1").restartBackground();
-				this.scene.resume("Scene1");		
+				this.scene.get(this.game.global.map.name + "_scene").restartBackground();
+				this.scene.resume(this.game.global.map.name + "_scene");		
 			}else{
 				
 				//rendre visible le menu
 				Phaser.Actions.IncX(this.fMenu.getChildren(),-this.hiddenPositionMenu.menu.x);
 				this.changeWindowForm("map_window");
-				this.scene.get("Scene1").setBackgroundGray();
-			    this.scene.pause("Scene1");
+				this.scene.get(this.game.global.map.name + "_scene").setBackgroundGray();
+			    this.scene.pause(this.game.global.map.name + "_scene");
 			}
 
 			},this)
@@ -298,8 +301,8 @@ class hud extends Phaser.Scene {
 		    this.changeWindowForm("clean");
 			Phaser.Actions.SetVisible(this.fMenu.getChildren(), false);
 			Phaser.Actions.IncX(this.fMenu.getChildren(), this.hiddenPositionMenu.menu.x);
-			this.scene.get("Scene1").restartBackground();
-			this.scene.resume("Scene1");		
+			this.scene.get(this.game.global.map.name + "_scene").restartBackground();
+			this.scene.resume(this.game.global.map.name + "_scene");		
 	}
 	
 	changeWindowForm(strChange){
@@ -334,6 +337,7 @@ class hud extends Phaser.Scene {
 							case "map_window":
 								Phaser.Actions.IncX(this.fMap_window.getChildren(), -this.hiddenPositionMenu.map_window.x);
 								Phaser.Actions.SetVisible(this.fMap_window.getChildren(), true);
+								this.toggleBooleanCellMinimap();
 								break;
 							case "inventaire_window":
 								Phaser.Actions.IncX(this.fInventaire_window.getChildren(), -this.hiddenPositionMenu.inventaire_window.x);
@@ -363,6 +367,193 @@ class hud extends Phaser.Scene {
 				}
 
 				
+	}
+	
+	toggleBooleanCellMinimap(){
+		let g = this.fMap_window.getChildren();
+		for(let i =0; i < g.length;i++){
+			let child = g[i];
+			if(child.getData("tag") === "cell-minimap"){
+				if(this.game.global.minimap[child.getData("name")] === false  ){
+					child.setVisible(false);
+				}
+				
+				if(this.game.global.map.name === child.getData("name") ){
+					child.setFillStyle(0xff0000);
+				}
+			}
+		}
+	}
+	
+	
+	generateCellMinimap(){
+		//  | o || o || o | 32px
+		//  | o || o || o |
+		//  | o || o || o |
+		//  | o || o || o |
+		//  | o || o || o |
+		//  | o || o || o |
+		var cell_data = {
+			m1:{
+				x:2042,
+				y:208,
+				width:1,
+				height:1
+			},
+			m2:{
+				x:2042,
+				y:144,
+				width:1,
+				height:2
+			},
+			m3:{
+				x:2042,
+				y:240,
+				width:2,
+				height:2
+			},
+			m4:{
+				x:2074,
+				y:208,
+				width:2,
+				height:1
+			},
+			m5: {
+				x:1946,
+				y:304,
+				width:4,
+				height:1
+			},
+			m6:{
+				x:1882,
+				y:304,
+				width:2,
+				height:2
+			},
+			m7:{
+				x:1818,
+				y:304,
+				width:2,
+				height:2
+			},
+			m8:{
+				x:1818,
+				y:368,
+				width:2,
+				height:2
+			},
+			m9:{
+				x:1882,
+				y:368,
+				width:2,
+				height:2
+			},
+			m10:{
+				x:1786,
+				y:432,
+				width:2,
+				height:2
+			},
+			m11:{
+				x:1786,
+				y:496,
+				width:5,
+				height:1
+			},
+			m12:{
+				x:1850,
+				y:528,
+				width:1,
+				height:1
+			},
+			m13:{
+				x:1946,
+				y:432,
+				width:2,
+				height:3
+			},
+			m14:{
+				x:2010,
+				y:464,
+				width:3,
+				height:1
+			},			
+			m15:{
+				x:2042,
+				y:496,
+				width:1,
+				height:2
+			},			
+			m16:{
+				x:2106,
+				y:464,
+				width:2,
+				height:1
+			},	
+			m17:{
+				x:2170,
+				y:464,
+				width:1,
+				height:1
+			},	
+			m18:{
+				x:2202,
+				y:464,
+				width:1,
+				height:3
+			},	
+			m19:{
+				x:2138,
+				y:528,
+				width:2,
+				height:2
+			},	
+			m20:{
+				x:1978,
+				y:560,
+				width:5,
+				height:1
+			},	
+			m21:{
+				x:2106,
+				y:400,
+				width:1,
+				height:2
+			},	
+			m22:{
+				x:2106,
+				y:368,
+				width:1,
+				height:1
+			},		
+			m23:{
+				x:1946,
+				y:368,
+				width:5,
+				height:1
+			},			
+			
+			
+												
+			
+		}
+		this.minimapCell = {};
+		_.mapObject(cell_data,(val,key)=>{
+			//console.log(val);
+		this.minimapCell[key] = this.add.rectangle(val.x,val.y ,val.width * 32,val.height *32,0xffffff);
+		this.minimapCell[key].setStrokeStyle(3,0x000000);
+		this.minimapCell[key].setOrigin(0);
+		this.minimapCell[key].setData("tag","cell-minimap");
+		this.minimapCell[key].setData("name",key);
+		this.minimapCell[key].setVisible(false);
+		this.fMap_window.add(this.minimapCell[key], true);
+		//cellule_map.setVisible(false);
+		},this)
+	}
+	
+	update(){
+		let coinPoints = this.game.global.coin;
+		this.infoTextCoin.setText("x " + coinPoints);
 	}
 	// Write your code here.
 

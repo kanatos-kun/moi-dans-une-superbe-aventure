@@ -22,8 +22,11 @@ window.addEventListener('load', function() {
 class Boot extends Phaser.Scene {
 
 	preload() {
+		this.load.script('MapExtends','assets/map/MapExtends.js')
+		//this.load.sceneFile('MapExtends','assets/map/mapExtends.js');
 		this.load.pack("pack", "assets/pack.json");
 		this.load.bitmapFont('KidsZone','assets/font/KidsZone.png','assets/font/KidsZone.xml');
+		//this.load.sceneFile('test','assets/map/mapExtends.js');
 	}
 
 	create() {

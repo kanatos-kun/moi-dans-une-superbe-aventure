@@ -40,6 +40,7 @@
   },
   "borderWidth": 832,
   "borderHeight": 832,
+  "preloadMethodName": "preload",
   "createMethodName": "_create",
   "methodContextType": "SCENE",
   "sceneKey": "Scene1"
