@@ -33,9 +33,14 @@ class m1_scene extends MapExtends {
 							xOrigin:0,
 							yOrigin:-64,
 						   dialogue:[
-							"hello mon ami, comment va tu?"
-						]
-					
+							"Salut, c'est ma maison mais elle est fermée pour l'instant ..."
+						]		
+		}
+		
+		this.musicData = {
+			name: "music_bytes_the_retro_adventure",
+			volume: 0.4,
+			loop: true
 		}
 		
 		

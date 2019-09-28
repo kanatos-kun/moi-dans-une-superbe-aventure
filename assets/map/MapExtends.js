@@ -30,9 +30,10 @@ class MapExtends extends Phaser.Scene {
 	/* START-USER-CODE */
 	mapCreate(){
 		var hud = this.scene.launch("hud");
+		this.musicManager();
 		this.coinGroup = this.add.group();
 		this.eventMapGroup = this.add.group();
-		
+		this.heroInteract = false;
 		
 		
 		this.game.global.map.name = this.parseKeyName();
@@ -65,59 +66,95 @@ class MapExtends extends Phaser.Scene {
 		this.keys.up.on("up", function(key,event){
 
 			pos = this.whereIsHero(this.fHero);
-			pos.y --;
-			if( !this.isHeroOutOfMap(pos) && !this.isHeroCollideWith(pos) ){
-				this.fHero.setY(this.fHero.y - 64);
-				this.moveCamera(pos,"up");
+
+			if(this.heroInteract === false){
+				
+
+				pos.y --;
+				if( !this.isHeroOutOfMap(pos) && !this.isHeroCollideWith(pos) ){
+
+					this.fHero.setY(this.fHero.y - 64);
+					this.moveCamera(pos,"up");
+				}
+				this.lastDirection = "top";
+				this.isHeroInTPPoint(pos);
+				
+				
 			}
-			this.lastDirection = "up";
-			this.isHeroInTPPoint(pos);
+
 
 		},this)
 		this.keys.right.on("up", function(key,event){
 			pos = this.whereIsHero(this.fHero);
 			pos.x++;
-			if( !this.isHeroOutOfMap(pos) && !this.isHeroCollideWith(pos) ){
-				this.fHero.setX(this.fHero.x + 64);
-				this.moveCamera(pos,"right");
+			if(this.heroInteract === false){
+				
+				if( !this.isHeroOutOfMap(pos) && !this.isHeroCollideWith(pos) ){
+					this.fHero.setX(this.fHero.x + 64);
+					this.moveCamera(pos,"right");
+				}
+				this.lastDirection = "right";
+				this.isHeroInTPPoint(pos);
+				
+				
+				
 			}
-			this.lastDirection = "right";
-			this.isHeroInTPPoint(pos);
+
 
 		},this)
 		
 		this.keys.down.on("up", function(key,event){
 
 			pos = this.whereIsHero(this.fHero);
-			pos.y++;
-			if( !this.isHeroOutOfMap(pos) && !this.isHeroCollideWith(pos) ){
-				this.fHero.setY(this.fHero.y + 64);
-				this.moveCamera(pos,"down");
-
+			if(this.heroInteract === false){
+				
+				pos.y++;
+				if( !this.isHeroOutOfMap(pos) && !this.isHeroCollideWith(pos) ){
+					this.fHero.setY(this.fHero.y + 64);
+					this.moveCamera(pos,"down");
+	
+				}
+				this.lastDirection = "down";
+				this.isHeroInTPPoint(pos);
+				
+				
+				
 			}
-			this.lastDirection = "down";
-			this.isHeroInTPPoint(pos);
+
 
 		},this)
 		
 		this.keys.left.on("up", function(key,event){
 
 			pos = this.whereIsHero(this.fHero);
-			pos.x--;
-			if( !this.isHeroOutOfMap(pos) && !this.isHeroCollideWith(pos) ){
-				this.fHero.setX(this.fHero.x - 64);
-				this.moveCamera(pos,"left");
+			if(this.heroInteract === false){
+				
+				
+				pos.x--;
+				if( !this.isHeroOutOfMap(pos) && !this.isHeroCollideWith(pos) ){
+					this.fHero.setX(this.fHero.x - 64);
+					this.moveCamera(pos,"left");
+				}
+				this.lastDirection = "left";
+				this.isHeroInTPPoint(pos);
+				
+				
 			}
-			this.lastDirection = "left";
-			this.isHeroInTPPoint(pos);
+
 			
 		},this)
 		
 		
 		this.keys.space.on("up", function(key,event){
 
-			console.log("action!");
-			console.log("last direction see : " + this.lastDirection);
+			pos = this.whereIsHero(this.fHero);
+
+			if (this.lastDirection === "left") pos.x--;
+			if (this.lastDirection === "down") pos.y++;
+			if (this.lastDirection === "right") pos.x++;
+			if (this.lastDirection === "top") pos.y--;									
+			
+			this.interractionWith(pos);
 			
 		},this)
 	}
@@ -128,6 +165,29 @@ class MapExtends extends Phaser.Scene {
 		this.grayRectangle.visible=true;
 		this.cameras.main.backgroundColor=Phaser.Display.Color.RGBStringToColor('rgb(100,100,100)');
 		//this.cameras.main.fadeOut(1000,200,200,200);
+	}
+	
+	interractionWith(pos){
+		if(this.grid[pos.y][pos.x] !== 0 && 
+			this.grid[pos.y][pos.x] !== 1 &&
+			this.grid[pos.y][pos.x] !== 2){
+				let eventArray = this.eventMapGroup.getChildren();
+				_.each(eventArray,(element)=>{
+					if(element === undefined){return}
+					else if(element.getData("column") === pos.x &&
+				   		    element.getData("row") === pos.y){
+						if(element.textDialogue.visible === true){
+							element.textDialogue.setVisible(false);
+							this.heroInteract = false;
+						}else{
+							element.textDialogue.setVisible(true);
+							this.heroInteract = true;
+						}
+
+						return true;
+					}
+				},this)
+			}
 	}
 	
 	restartBackground(){
@@ -152,7 +212,10 @@ class MapExtends extends Phaser.Scene {
 	isHeroCollideWith(pos){
 		//console.log(this.grid[pos.y][pos.x]);
 		let boolIs = false;
+
+		let sound;
 		if(this.grid[pos.y][pos.x]=== 1){
+			sound = this.sound.play("retro_move_walk_tick_09");
 			return true;
 		}else if(this.grid[pos.y][pos.x] ===2){
 			//collision avec piece
@@ -171,6 +234,7 @@ class MapExtends extends Phaser.Scene {
 				if(element === undefined){return}
 				else if(element.getData("column") === pos.x &&
 				   element.getData("row") === pos.y){
+						sound = this.sound.play("retro_collect_pickup_coin_20");
 						this.coinGroup.killAndHide(element);
 						this.coinGroup.remove(element,true,true);
 						//this.coinGroup.remove(element,true,true);
@@ -220,6 +284,25 @@ class MapExtends extends Phaser.Scene {
 		return false;
 	}
 	
+	musicManager(){
+		if(this.musicData !== undefined && 
+		   this.game.global.music.name !== this.musicData.name){
+			
+			if(this.game.global.music.object !== ""){
+				this.game.global.music.object.stop();
+			}
+
+			this.game.global.music.object = this.sound.add(this.musicData.name);
+			let music = this.game.global.music.object;
+
+			music.play();
+			music.volume = this.musicData.volume;
+			music.loop = this.musicData.loop;
+			this.game.global.music.name = this.musicData.name;
+		}
+
+	}
+	
 	moveCamera(pos,direction){
 		
 		if(this.grid_height> 12){
@@ -236,7 +319,7 @@ class MapExtends extends Phaser.Scene {
 		if(this.grid_width> 13){
 			if(pos.x +6 < (this.grid_width - 1) && direction ==="left" && pos.x - 6>= 0){
 				this.cameras.main.scrollX = this.cameras.main.scrollX -64;
-
+				console.log("scrollX --")
 			}
 			if(pos.x-6> 0 && direction ==="right"  && pos.x + 6<= (this.grid_width - 1) ){
 				this.cameras.main.scrollX = this.cameras.main.scrollX +64;
@@ -254,7 +337,8 @@ class MapExtends extends Phaser.Scene {
 				this.keys.up.off("up");
 				this.keys.right.off("up");
 				this.keys.left.off("up");
-				this.keys.down.off("up");				
+				this.keys.down.off("up");		
+				this.keys.space.off("up");			
 				this.scene.start(tpPoint.go,{x:tpPoint.xtp,y:tpPoint.ytp});
 			}
 		}
@@ -379,15 +463,25 @@ class MapExtends extends Phaser.Scene {
 							// event !!
 							if(this.eventMap[c] !== undefined){ // plage de sureté :D :D :D
 								let dataEvent = this.eventMap[c];
-							
-								let eventMap =this.add.eventMap(64*indexC + dataEvent.xOrigin,64+64*indexL + dataEvent.yOrigin,dataEvent.atlas,dataEvent.frame).setOrigin(0);
-								eventMap.setData("column",indexC);
-								eventMap.setData("row",indexL);
-								eventMap.setData("tag",dataEvent.tag);
-								eventMap.setData("collide",dataEvent.collide);
-								eventMap.setData("dialogue",dataEvent.dialogue);
-								eventMap.setDepth(25);
-								this.eventMapGroup.add(eventMap);
+								let eventMap = undefined;
+								if(dataEvent.tag === "character"){
+									eventMap =this.add.eventmap_character(64*indexC + dataEvent.xOrigin,64+64*indexL + dataEvent.yOrigin,dataEvent.atlas,dataEvent.frame).setOrigin(0);
+								}else if(dataEvent.tag ==="door"){
+									eventMap =this.add.eventmap_door(64*indexC + dataEvent.xOrigin,64+64*indexL + dataEvent.yOrigin,dataEvent.atlas,dataEvent.frame).setOrigin(0);
+								}
+								console.log("test");
+								console.log(eventMap);
+								if(eventMap !== undefined){
+									eventMap.setData("column",indexC);
+									eventMap.setData("row",indexL);
+									eventMap.setData("tag",dataEvent.tag);
+									eventMap.setData("collide",dataEvent.collide);
+									eventMap.setData("dialogue",dataEvent.dialogue);
+									eventMap.setDepth(25);
+									eventMap.init();
+									this.eventMapGroup.add(eventMap);
+								}
+
 							}
 
 						}
@@ -398,14 +492,30 @@ class MapExtends extends Phaser.Scene {
 
 	centerCameraOnHero(){
 				if(this.grid_height > 12){
-			// la map est diviser en plusieur partie.
+
+			/*
 			var decalage_y = this.grid_height / 12; 
 			//this.cameras.main.centerOnY(( (decalage_y - 1) * (64 * 12) ) + 420 );
 			if(this.posHero.y <= 0){
 				this.cameras.main.centerOnY(832 / 2);
 			}else if(this.posHero.y >= (this.grid_height- 1) ){
 				this.cameras.main.centerOnY( ( (decalage_y - 1) * (64 * 12) ) + 420 )
-			}
+			}*/
+			var decalage_y =  Phaser.Math.FloorTo(this.posHero.y / 12);
+
+
+			this.cameras.main.centerOnY( (decalage_y + 1) * 384 + (decalage_y * 384) + 24 );
+			
+		}
+		
+				if(this.grid_width > 13){
+
+			var decalage_x =  Phaser.Math.FloorTo(this.posHero.x / 13);
+
+
+			this.cameras.main.centerOnX( (decalage_x + 1) * 416 + (decalage_x * 416) );
+
+			//this.cameras.main.centerOnX(384)
 		}
 	}
 

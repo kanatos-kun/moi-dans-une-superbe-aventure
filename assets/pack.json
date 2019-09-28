@@ -113,11 +113,6 @@
       "url": "assets/script/coin.js"
     },
     {
-      "type": "script",
-      "key": "EventMap",
-      "url": "assets/script/EventMap.js"
-    },
-    {
       "type": "text",
       "key": "m4_txt",
       "url": "assets/map/m4_txt.txt"
@@ -161,10 +156,125 @@
       "type": "sceneFile",
       "key": "m6_scene",
       "url": "assets/map/m6_scene.js"
+    },
+    {
+      "type": "script",
+      "key": "Eventmap_character",
+      "url": "assets/script/Eventmap_character.js"
+    },
+    {
+      "type": "script",
+      "key": "Eventmap_door",
+      "url": "assets/script/Eventmap_door.js"
+    },
+    {
+      "type": "audio",
+      "key": "retro_ui_menu_simple_click_12",
+      "url": ["assets/sons/effect/retro_ui_menu_simple_click_12.wav"]
+    },
+    {
+      "type": "audio",
+      "key": "retro_footstep_movement_02",
+      "url": ["assets/sons/effect/retro_footstep_movement_02.wav"]
+    },
+    {
+      "type": "audio",
+      "key": "music_calm_tree_of_life",
+      "url": ["assets/sons/music/music_calm_tree_of_life.wav"]
+    },
+    {
+      "type": "audio",
+      "key": "retro_collect_pickup_coin_20",
+      "url": ["assets/sons/effect/retro_collect_pickup_coin_20.wav"]
+    },
+    {
+      "type": "audio",
+      "key": "retro_move_walk_tick_09",
+      "url": ["assets/sons/effect/retro_move_walk_tick_09.wav"]
+    },
+    {
+      "type": "audio",
+      "key": "music_kids_play_loop_01",
+      "url": ["assets/sons/music/music_kids_play_loop_01.wav"]
+    },
+    {
+      "type": "audio",
+      "key": "music_8bit_jammer",
+      "url": ["assets/sons/music/music_8bit_jammer.wav"]
+    },
+    {
+      "type": "audio",
+      "key": "music_harp_peaceful_loop",
+      "url": ["assets/sons/music/music_harp_peaceful_loop.wav"]
+    },
+    {
+      "type": "audio",
+      "key": "music_bytes_the_retro_adventure",
+      "url": ["assets/sons/music/music_bytes_the_retro_adventure.wav"]
+    },
+    {
+      "type": "sceneFile",
+      "key": "m10_scene",
+      "url": "assets/map/m10_scene.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "m7_scene",
+      "url": "assets/map/m7_scene.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "m8_scene",
+      "url": "assets/map/m8_scene.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "m9_scene",
+      "url": "assets/map/m9_scene.js"
+    },
+    {
+      "type": "tilemapTiledJSON",
+      "key": "m10_data",
+      "url": "assets/map/m10.json"
+    },
+    {
+      "type": "tilemapTiledJSON",
+      "key": "m7_data",
+      "url": "assets/map/m7.json"
+    },
+    {
+      "type": "tilemapTiledJSON",
+      "key": "m8_data",
+      "url": "assets/map/m8.json"
+    },
+    {
+      "type": "tilemapTiledJSON",
+      "key": "m9_data",
+      "url": "assets/map/m9.json"
+    },
+    {
+      "type": "text",
+      "key": "m10_txt",
+      "url": "assets/map/m10_txt.txt"
+    },
+    {
+      "type": "text",
+      "key": "m7_txt",
+      "url": "assets/map/m7_txt.txt"
+    },
+    {
+      "type": "text",
+      "key": "m8_txt",
+      "url": "assets/map/m8_txt.txt"
+    },
+    {
+      "type": "text",
+      "key": "m9_txt",
+      "url": "assets/map/m9_txt.txt"
     }
   ]},
   "meta": {
-    "generated": "1569535963819",
+    "generated": "1569705709866",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.3",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

@@ -428,110 +428,98 @@ class hud extends Phaser.Scene {
 				x:1882,
 				y:304,
 				width:2,
-				height:2
+				height:1
 			},
 			m7:{
-				x:1818,
-				y:304,
+				x:1882,
+				y:336,
 				width:2,
-				height:2
+				height:1
 			},
 			m8:{
-				x:1818,
+				x:1850,
 				y:368,
 				width:2,
 				height:2
 			},
 			m9:{
-				x:1882,
-				y:368,
-				width:2,
-				height:2
-			},
-			m10:{
 				x:1786,
 				y:432,
-				width:2,
-				height:2
-			},
-			m11:{
-				x:1786,
-				y:496,
 				width:5,
 				height:1
 			},
-			m12:{
+			m10:{
 				x:1850,
-				y:528,
+				y:464,
 				width:1,
 				height:1
 			},
-			m13:{
+			m11:{
 				x:1946,
-				y:432,
+				y:400,
 				width:2,
 				height:3
 			},
-			m14:{
+			m12:{
 				x:2010,
-				y:464,
+				y:432,
 				width:3,
 				height:1
 			},			
-			m15:{
+			m13:{
 				x:2042,
-				y:496,
+				y:464,
 				width:1,
 				height:2
 			},			
-			m16:{
+			m14:{
 				x:2106,
-				y:464,
+				y:432,
 				width:2,
 				height:1
 			},	
-			m17:{
+			m15:{
 				x:2170,
-				y:464,
+				y:432,
 				width:1,
 				height:1
 			},	
-			m18:{
+			m16:{
 				x:2202,
-				y:464,
+				y:432,
 				width:1,
 				height:3
 			},	
-			m19:{
+			m17:{
 				x:2138,
-				y:528,
+				y:496,
 				width:2,
 				height:2
 			},	
-			m20:{
+			m18:{
 				x:1978,
-				y:560,
+				y:528,
 				width:5,
 				height:1
 			},	
-			m21:{
+			m19:{
 				x:2106,
-				y:400,
+				y:368,
 				width:1,
 				height:2
 			},	
-			m22:{
+			m20:{
 				x:2106,
-				y:368,
+				y:336,
 				width:1,
 				height:1
-			},		
-			m23:{
+			},	
+			m21:{
 				x:1946,
-				y:368,
+				y:336,
 				width:5,
 				height:1
-			},			
+			}		
 			
 			
 												

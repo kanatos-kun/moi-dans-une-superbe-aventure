@@ -44,7 +44,7 @@ class Scene1 extends Phaser.Scene {
 			},
 			minimap: {
 				m1: false,
-				m2: false,
+				m2: false,//true,//
 				m3: false,
 				m4: false,
 				m5: false,
@@ -52,21 +52,21 @@ class Scene1 extends Phaser.Scene {
 				m7: false,
 				m8: false,
 				m9: false,
-				m10: false,
-				m11: false,
-				m12: false,
-				m13: false,
-				m14: false,
-				m15: false,
-				m15: false,
-				m16: false,
-				m17: false,
-				m18: false,
-				m19: false,			
-				m20: false,			
-				m21: false,			
-				m22: false,	
-				m23: false	
+				m10:false,
+				m11:false,
+				m12:false,
+				m13:false,
+				m14:false,
+				m15:false,
+				m15:false,
+				m16:false,
+				m17:false,
+				m18:false,
+				m19:false,			
+				m20:false,			
+				m21:false,			
+				m22:false,
+				m23:false
 			},
 			coin: 0,
 			mapGrid:{}
@@ -92,9 +92,14 @@ class Scene1 extends Phaser.Scene {
 	}
 	
 	globalDataGenerate(){
-		for(let i = 1; i <= 6;i++){ //genere les variables global jusqu'a m3
+		for(let i = 1; i <= 10;i++){ //genere les variables global jusqu'a m3
 			this.game.global.mapGrid["m"+i] = {}
 			this.game.global.mapGrid["m"+i].data = this.mapTextParser("m"+i);
+		}
+		this.game.global.music = {
+			name : "",
+			volume: 0,
+			object: ""
 		}
 	}
 	
