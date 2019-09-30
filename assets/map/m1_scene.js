@@ -33,8 +33,34 @@ class m1_scene extends MapExtends {
 							xOrigin:0,
 							yOrigin:-64,
 						   dialogue:[
-							"Salut, c'est ma maison mais elle est fermée pour l'instant ..."
-						]		
+							"Salut, c'est ma maison mais elle est fermee pour l'instant ..."
+						],
+						xDialogue: 0,
+						yDialogue:0,
+		}
+		
+	    this.eventMap[10] ={tag: "door",
+						   atlas: "atlas",
+						   frame: "serrure_top.png",
+						   collide: true,
+							xOrigin:0,
+							yOrigin:8,
+							xDialogue: 0,
+							yDialogue:0,
+						   dialogue:[
+							"Il vous faut 10 pieces d'or pour ouvrir cette porte...",
+							"Deverrouillage!"
+						],
+						condition: 
+							[
+								{
+								type: "number",
+								var: "coin",
+								operator: ">=",
+								value: 10
+								}
+							]
+						
 		}
 		
 		this.musicData = {

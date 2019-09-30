@@ -271,10 +271,55 @@
       "type": "text",
       "key": "m9_txt",
       "url": "assets/map/m9_txt.txt"
+    },
+    {
+      "type": "sceneFile",
+      "key": "LoadingScene",
+      "url": "assets/scenes/LoadingScene.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "titleScreenScene",
+      "url": "assets/scenes/titleScreenScene.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "CreditScreenScene",
+      "url": "assets/scenes/CreditScreenScene.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "gameOverScreenScene",
+      "url": "assets/scenes/gameOverScreenScene.js"
+    },
+    {
+      "type": "audio",
+      "key": "door_lock_open_03",
+      "url": ["assets/sons/effect/door_lock_open_03.wav"]
+    },
+    {
+      "type": "image",
+      "key": "tuto_panel",
+      "url": "assets/img/tuto_panel.png"
+    },
+    {
+      "type": "image",
+      "key": "fin_jeu",
+      "url": "assets/img/fin_jeu.png"
+    },
+    {
+      "type": "image",
+      "key": "ecran_titre",
+      "url": "assets/img/ecran_titre.png"
+    },
+    {
+      "type": "image",
+      "key": "credit",
+      "url": "assets/img/credit.png"
     }
   ]},
   "meta": {
-    "generated": "1569705709866",
+    "generated": "1569857678519",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.3",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

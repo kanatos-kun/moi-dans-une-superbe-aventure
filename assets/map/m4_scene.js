@@ -27,7 +27,51 @@ class m4_scene extends MapExtends {
 			
 			
 		this.eventMap = []
-			
+
+
+		this.eventMap[6] ={tag: "character",
+						   atlas: "atlas",
+						   frame: "enemie_2.png",
+						   collide: true,
+							xOrigin:-48,
+							yOrigin:-64,
+						   dialogue:[
+							"Grrr.. Bienvenue dans le village des monstres >_<"
+						],
+							xDialogue: 0,
+							yDialogue:0,
+		}
+
+
+		this.eventMap[7] ={tag: "character",
+						   atlas: "atlas",
+						   frame: "enemie_2.png",
+						   collide: true,
+							xOrigin:-48,
+							yOrigin:-64,
+						   dialogue:[
+							"Grrrr ! Pieces !!"
+						],
+							xDialogue: 0,
+							yDialogue:0,
+		}
+		
+		this.eventMap[8] ={tag: "character",
+						   atlas: "atlas",
+						   frame: "enemie_2.png",
+						   collide: true,
+							xOrigin:-48,
+							yOrigin:-64,
+						   dialogue:[
+							">_> ... "
+						],
+							xDialogue: 0,
+							yDialogue:0,
+		}
+		
+		
+
+
 		this.musicData = {
 			name: "music_bytes_the_retro_adventure",
 			volume: 0.4,

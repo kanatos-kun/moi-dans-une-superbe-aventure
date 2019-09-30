@@ -37,8 +37,67 @@ class m6_scene extends MapExtends {
 							yOrigin:-64,
 						   dialogue:[
 							"Bienvenue au village des Doubadoux! :D"
-						]		
+						],
+							xDialogue: 0,
+							yDialogue:0,
 		}
+		
+		this.eventMap[6] ={tag: "character",
+						   atlas: "atlas",
+						   frame: "npc_2.png",
+						   collide: true,
+							xOrigin:0,
+							yOrigin:-64,
+						   dialogue:[
+							"Ici tout le monde est doux."
+						],
+							xDialogue: 0,
+							yDialogue:0,
+		}
+		
+		
+		this.eventMap[7] ={tag: "character",
+						   atlas: "atlas",
+						   frame: "npc_1.png",
+						   collide: true,
+							xOrigin:0,
+							yOrigin:-64,
+						   dialogue:[
+							"Il y a une porte verouillé au sud du village."
+						],
+							xDialogue: 0,
+							yDialogue:0,
+		}
+		
+		this.eventMap[8] ={tag: "character",
+						   atlas: "atlas",
+						   frame: "npc_3.png",
+						   collide: true,
+							xOrigin:-32,
+							yOrigin:-120,
+						   dialogue:[
+							":x"
+						],
+							xDialogue: 0,
+							yDialogue:0,
+		}
+		
+			
+		this.eventMap[9] ={tag: "character",
+						   atlas: "atlas",
+						   frame: "npc_3.png",
+						   collide: true,
+							xOrigin:-32,
+							yOrigin:-120,
+						   dialogue:[
+							"hahaha"
+						],
+							xDialogue: 0,
+							yDialogue:0,
+		}
+			
+			
+			
 			
 		this.musicData = {
 			name: "music_harp_peaceful_loop",

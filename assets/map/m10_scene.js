@@ -27,7 +27,25 @@ class m10_scene extends MapExtends {
 			
 			
 		this.eventMap = []
-			
+		
+		
+		this.eventMap[5] ={tag: "character",
+						   atlas: "atlas",
+						   frame: "npc_1.png",
+						   collide: true,
+							xOrigin:0,
+							yOrigin:-64,
+						   dialogue:[
+							"Bravo mon ami, tu as reussi de terminer le jeu!"
+						],
+						xDialogue: 0,
+						yDialogue:0,
+						sceneTP: "gameOverScreenScene"
+
+		}
+		
+		
+		
 		this.musicData = {
 			name: "music_bytes_the_retro_adventure",
 			volume: 0.4,

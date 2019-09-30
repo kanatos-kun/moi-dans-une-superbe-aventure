@@ -31,7 +31,9 @@ class m3_scene extends MapExtends {
 							yOrigin:-130,
 						   dialogue:[
 							"OUUUUUIIII !!Recolte pleins de pieces !"
-						]		
+						],
+							xDialogue: 0,
+							yDialogue:0,
 		}
 		
 		
@@ -43,8 +45,12 @@ class m3_scene extends MapExtends {
 							yOrigin:0,
 						   dialogue:[
 							"swwwig swwig!"
-						]		
+						],
+							xDialogue: 0,
+							yDialogue:0,
 		}
+		
+		
 		
 		this.eventMap[14] ={tag: "character",
 						   atlas: "atlas",
@@ -54,7 +60,9 @@ class m3_scene extends MapExtends {
 							yOrigin:0,
 						   dialogue:[
 							"hello, je suis un asticot :o"
-						]		
+						],
+							xDialogue: 0,
+							yDialogue:0,
 		}
 			
 		this.musicData = {

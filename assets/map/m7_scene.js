@@ -29,7 +29,57 @@ class m7_scene extends MapExtends {
 			
 		this.eventMap = []
 
-			
+
+
+		this.eventMap[5] ={tag: "character",
+						   atlas: "atlas",
+						   frame: "npc_2.png",
+						   collide: true,
+							xOrigin:0,
+							yOrigin:-64,
+						   dialogue:[
+							"Toute les maisons sont fermees au village..."
+						],
+							xDialogue: 0,
+							yDialogue:0,
+		}
+
+		this.eventMap[6] ={tag: "character",
+						   atlas: "atlas",
+						   frame: "npc_1.png",
+						   collide: true,
+							xOrigin:0,
+							yOrigin:-64,
+						   dialogue:[
+							"..."
+						],
+							xDialogue: 0,
+							yDialogue:0,
+		}
+
+	    this.eventMap[10] ={tag: "door",
+						   atlas: "atlas",
+						   frame: "serrure_top.png",
+						   collide: true,
+							xOrigin:0,
+							yOrigin:36,
+						   dialogue:[
+							"Il vous faut 60 pieces d'or pour ouvrir cette porte...",
+							"Deverrouillage!"
+						],
+							xDialogue: 0,
+							yDialogue:-58,
+						condition: 
+							[
+								{
+								type: "number",
+								var: "coin",
+								operator: ">=",
+								value: 60
+								}
+							]
+						
+		}
 		this.musicData = {
 			name: "music_harp_peaceful_loop",
 			volume: 0.4,

@@ -28,7 +28,58 @@ class m9_scene extends MapExtends {
 			
 			
 		this.eventMap = []
-
+	    this.eventMap[10] ={tag: "door",
+						   atlas: "atlas",
+						   frame: "serrure_top.png",
+						   collide: true,
+							xOrigin:0,
+							yOrigin:36,
+						   dialogue:[
+							"Il vous faut 64 pieces d'or pour ouvrir cette porte...",
+							"Deverrouillage!"
+						],
+						xDialogue: 0,
+						yDialogue:-58,
+						condition: 
+							[
+								{
+								type: "number",
+								var: "coin",
+								operator: ">=",
+								value: 64
+								}
+							]
+						
+		}
+		
+		this.eventMap[13] ={tag: "character",
+						   atlas: "atlas",
+						   frame: "enemie_1.png",
+						   collide: true,
+							xOrigin:0,
+							yOrigin:0,
+						   dialogue:[
+							"swwwig swwig!"
+						],
+							xDialogue: 0,
+							yDialogue:0,
+		}
+		
+		this.eventMap[9] ={tag: "character",
+						   atlas: "atlas",
+						   frame: "enemie_2.png",
+						   collide: true,
+							xOrigin:0,
+							yOrigin:-64,
+						   dialogue:[
+							"GRRRR...."
+						],
+							xDialogue: 0,
+							yDialogue:0,
+		}
+		
+		
+		
 			
 		this.musicData = {
 			name: "music_bytes_the_retro_adventure",

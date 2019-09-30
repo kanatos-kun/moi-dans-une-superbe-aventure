@@ -37,7 +37,9 @@ class m5_scene extends MapExtends {
 							yOrigin:-64,
 						   dialogue:[
 							"mince! Je perds toute mes pieces..."
-						]		
+						],
+							xDialogue: 0,
+							yDialogue:0,
 		}
 		
 		
@@ -49,7 +51,9 @@ class m5_scene extends MapExtends {
 							yOrigin:-64,
 						   dialogue:[
 							"GRRRR...."
-						]		
+						],
+							xDialogue: 0,
+							yDialogue:0,
 		}
 			
 		this.musicData = {

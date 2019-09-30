@@ -69,7 +69,9 @@ class Scene1 extends Phaser.Scene {
 				m23:false
 			},
 			coin: 0,
-			mapGrid:{}
+			coin_total_find:0,
+			mapGrid:{},
+			switch: [false]
 		}
 		this.globalDataGenerate();
 		var datacc = JSON.stringify(this.game.global);
@@ -84,7 +86,9 @@ class Scene1 extends Phaser.Scene {
 			localStorage.setItem("Savefile",stringifyJson);
 			return stringifyJson;
 		}
-		this.scene.launch("m1_scene",  {x:3,y:5}  );
+		//this.scene.launch("m1_scene",  {x:3,y:5}  );
+		this.scene.start("titleScreenScene");
+		//this.scene.start("gameOverScreenScene");
 	}
 
 	update() {
@@ -176,6 +180,26 @@ class Scene1 extends Phaser.Scene {
 		},this)
 		
 		return grid;
+	}
+	
+	
+		musicManager(musicName,volume,loop){
+		if(musicName !== undefined && 
+		   this.game.global.music.name !== musicName){
+			
+			if(this.game.global.music.object !== ""){
+				this.game.global.music.object.stop();
+			}
+
+			this.game.global.music.object = this.sound.add(musicName);
+			let music = this.game.global.music.object;
+
+			music.play();
+			music.volume = volume;
+			music.loop = loop;
+			this.game.global.music.name = musicName;
+		}
+
 	}
 	
 

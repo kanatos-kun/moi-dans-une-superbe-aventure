@@ -35,7 +35,23 @@ class MapExtends extends Phaser.Scene {
 		this.eventMapGroup = this.add.group();
 		this.heroInteract = false;
 		
-		
+		if(this.scene.key ==="m1_scene" && this.game.global.switch[0] === false){
+			this.tutorialImage = this.add.image(20,74,"tuto_panel");
+			this.tutorialImage.setOrigin(0);
+			this.tutorialImage.setDepth(100);
+			this.tutorialText = this.add.text(300,620,"click 'SPACE' to continue", {
+		    "align": "center",
+		    "fontFamily": "MySonIsTebe",
+		    "fontSize": "35px",
+		    "color": "#ffffff",
+		    //"fixedWidth": 300,
+		    "fixedHeight": 200,
+			"stroke": "#000000",
+			"strokeThickness": 3
+			})
+			this.tutorialText.setDepth(101);
+			this.heroInteract = true;
+		}
 		this.game.global.map.name = this.parseKeyName();
 		this.game.global.minimap[this.parseKeyName() ] = true;
 		hud.bringToTop("hud");
@@ -168,6 +184,17 @@ class MapExtends extends Phaser.Scene {
 	}
 	
 	interractionWith(pos){
+		
+		
+		if(this.scene.key ==="m1_scene" && this.game.global.switch[0] === false){
+			this.sound.play("simple_click");
+			this.tutorialImage.destroy();
+			this.tutorialText.destroy();
+			this.game.global.switch[0] = true
+			this.heroInteract = false;
+		}
+		
+		
 		if(this.grid[pos.y][pos.x] !== 0 && 
 			this.grid[pos.y][pos.x] !== 1 &&
 			this.grid[pos.y][pos.x] !== 2){
@@ -176,12 +203,64 @@ class MapExtends extends Phaser.Scene {
 					if(element === undefined){return}
 					else if(element.getData("column") === pos.x &&
 				   		    element.getData("row") === pos.y){
-						if(element.textDialogue.visible === true){
-							element.textDialogue.setVisible(false);
-							this.heroInteract = false;
-						}else{
-							element.textDialogue.setVisible(true);
-							this.heroInteract = true;
+					
+					
+					
+						if(element.getData("tag") === "character" ){
+							if(this.scene.key ==="m10_scene"){	
+								element.switch = true;
+							}
+							if(element.textDialogue.visible === true){
+								element.textDialogue.setVisible(false);
+								this.heroInteract = false;
+							}else{
+								element.textDialogue.setVisible(true);
+								this.heroInteract = true;
+							}
+							
+						}
+					
+
+						
+						if(element.getData("tag") ==="door"){
+
+
+							if(element.checkCondition() ){
+								if(element.textDialogue.visible === true){
+									
+									element.textDialogue.setVisible(false);
+									this.heroInteract = false;
+									
+									this.game.global.coin -= element.getData("condition")[0].value;
+									this.eventMapGroup.killAndHide(element);
+									this.eventMapGroup.remove(element,true,true);
+									this.grid[pos.y][pos.x] = 0;
+									this.game.global.mapGrid[this.parseKeyName() ].data = this.grid; 
+									
+
+									
+								}else{
+									
+									element.textDialogue.text = element.getData("dialogue")[1];
+									element.textDialogue.setVisible(true);
+									this.heroInteract = true;
+									var sound = this.sound.play("door_lock_open_03");
+									
+								}
+
+							}else{
+								
+								if(element.textDialogue.visible === true){
+									element.textDialogue.setVisible(false);
+									this.heroInteract = false;
+								}else{
+									element.textDialogue.setVisible(true);
+									this.heroInteract = true;
+								}
+								
+								
+								
+							}
 						}
 
 						return true;
@@ -221,33 +300,23 @@ class MapExtends extends Phaser.Scene {
 			//collision avec piece
 
 			let coinArray=this.coinGroup.getChildren();
-			//coinArray[0].x +=10;
 			
 			_.each(coinArray,(element)=>{
-				/*
-				console.log("element column :")
-				console.log(element.getData("column") )
-				console.log("element row :")
-				console.log(element.getData("row") )
-			    console.log("pos :")
-				console.log("{"+pos.x+";"+pos.y+"}" ) */
+				
 				if(element === undefined){return}
 				else if(element.getData("column") === pos.x &&
 				   element.getData("row") === pos.y){
 						sound = this.sound.play("retro_collect_pickup_coin_20");
 						this.coinGroup.killAndHide(element);
 						this.coinGroup.remove(element,true,true);
-						//this.coinGroup.remove(element,true,true);
 						this.game.global.coin++;
+						this.game.global.coin_total_find++;
 						this.grid[pos.y][pos.x] = 0;
 						this.game.global.mapGrid[this.parseKeyName() ].data = this.grid;
 						return;
 					}
 			},this)
-			//console.log(coin)
-			//coin.x += 10;
-					//	coin.destroy(true);
-			//console.log(coin);
+
 		}else if(this.grid[pos.y][pos.x] !==2 &&
 				 this.grid[pos.y][pos.x] !==1 &&
 				 this.grid[pos.y][pos.x] !==0	){
@@ -255,13 +324,7 @@ class MapExtends extends Phaser.Scene {
 			let eventArray = this.eventMapGroup.getChildren();
 
 			_.each(eventArray,(element)=>{
-				/*
-				console.log("element column :")
-				console.log(element.getData("column") )
-				console.log("element row :")
-				console.log(element.getData("row") )
-			    console.log("pos :")
-				console.log("{"+pos.x+";"+pos.y+"}" ) */
+
 				if(element === undefined){return}
 				else if(element.getData("column") === pos.x &&
 				   element.getData("row") === pos.y){
@@ -319,7 +382,6 @@ class MapExtends extends Phaser.Scene {
 		if(this.grid_width> 13){
 			if(pos.x +6 < (this.grid_width - 1) && direction ==="left" && pos.x - 6>= 0){
 				this.cameras.main.scrollX = this.cameras.main.scrollX -64;
-				console.log("scrollX --")
 			}
 			if(pos.x-6> 0 && direction ==="right"  && pos.x + 6<= (this.grid_width - 1) ){
 				this.cameras.main.scrollX = this.cameras.main.scrollX +64;
@@ -469,14 +531,21 @@ class MapExtends extends Phaser.Scene {
 								}else if(dataEvent.tag ==="door"){
 									eventMap =this.add.eventmap_door(64*indexC + dataEvent.xOrigin,64+64*indexL + dataEvent.yOrigin,dataEvent.atlas,dataEvent.frame).setOrigin(0);
 								}
-								console.log("test");
-								console.log(eventMap);
 								if(eventMap !== undefined){
 									eventMap.setData("column",indexC);
 									eventMap.setData("row",indexL);
 									eventMap.setData("tag",dataEvent.tag);
 									eventMap.setData("collide",dataEvent.collide);
 									eventMap.setData("dialogue",dataEvent.dialogue);
+									eventMap.setData("xDialogue",dataEvent.xDialogue);
+									eventMap.setData("yDialogue",dataEvent.yDialogue);
+									if(dataEvent.sceneTP !== undefined){
+										console.log("ttt")
+										eventMap.setData("sceneTP",dataEvent.sceneTP);
+									}
+									if(dataEvent.tag ==="door"){
+										eventMap.setData("condition",dataEvent.condition);
+									}
 									eventMap.setDepth(25);
 									eventMap.init();
 									this.eventMapGroup.add(eventMap);

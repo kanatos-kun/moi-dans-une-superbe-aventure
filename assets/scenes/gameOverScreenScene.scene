@@ -1,0 +1,29 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.3",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "7f3c49f6-d092-4d64-af9d-e8b1a28e8438",
+    "-type": "DisplayList",
+    "children": [{
+      "-id": "25c1529e-018e-49a1-9bbf-0c75625b292c",
+      "-type": "Image",
+      "children": [],
+      "variableName": "enemie_1.png",
+      "variableField": false,
+      "x": 411.3064880371094,
+      "y": 415.61297607421875,
+      "textureKey": "fin_jeu",
+      "textureFrame": "fin_jeu"
+    }]
+  },
+  "groups": {
+    "-id": "c60cdde5-3a71-4020-af98-b6e122b82d41",
+    "-type": "Groups",
+    "children": []
+  },
+  "borderHeight": 450,
+  "createMethodName": "_create",
+  "methodContextType": "SCENE",
+  "sceneKey": "gameOverScreenScene"
+}
